@@ -49,7 +49,7 @@ export const ContentX = styled(Content)`
 
   @media (max-width: 1100px) {
     padding: 24px 30px;
-    min-height: calc(100vh - 156px);
+    min-height: calc(100vh - 246px);
   }
 
   ${media.mobile`
