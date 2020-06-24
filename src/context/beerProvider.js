@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useCallback } from 'react';
 
 import beersApi from '../api/beer';
 
@@ -44,21 +44,21 @@ export const BeerProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
 
-  const fetchBeers = async (pageNumber = 1) => {
+  const fetchBeers = useCallback(async (pageNumber = 1) => {
     setLoading(true);
     const response = await beersApi.get(
-      `/beers?page=${pageNumber}&per_page=20`
+      `/beers?page=${pageNumber}&per_page=15`
     );
     //set hasMore to true if current response array is not empty
     setHasMore(response.data.length > 0);
     dispatch({ type: 'FETCH_BEERS', payload: response.data });
     setLoading(false);
-  };
+  }, []);
 
-  const fetchBeersByName = (data) => {
+  const fetchBeersByName = useCallback((data) => {
     dispatch({ type: 'FETCH_BEERS', payload: data });
     setLoading(false);
-  };
+  }, []);
 
   const addToFavourite = (beer) => {
     dispatch({ type: 'ADD_TO_FAVOURITE', payload: beer });
@@ -68,7 +68,10 @@ export const BeerProvider = ({ children }) => {
     dispatch({ type: 'REMOVE_FROM_FAVOURITE', payload: beer });
   };
 
-  const resetBeersState = () => dispatch({ type: 'RESET_BEERS_STATE' });
+  const resetBeersState = useCallback(
+    () => dispatch({ type: 'RESET_BEERS_STATE' }),
+    []
+  );
 
   return (
     <BeerContext.Provider

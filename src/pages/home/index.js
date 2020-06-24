@@ -42,7 +42,7 @@ const Home = () => {
       });
       if (node) observer.current.observe(node);
     },
-    [loading]
+    [loading, hasMore]
   );
   const handleInputChange = (e) => {
     setQuery(e.target.value);
@@ -53,14 +53,14 @@ const Home = () => {
     if (query === '') {
       fetchBeers(pageNumber);
     }
-  }, [query, pageNumber]);
+  }, [query, pageNumber, fetchBeers]);
 
   useEffect(() => {
     if (query !== '') {
       var cancel;
       setLoading(true);
       beerApi
-        .get(`/beers?page=${pageNumber}&per_page=20&beer_name=${query}`, {
+        .get(`/beers?page=${pageNumber}&per_page=15&beer_name=${query}`, {
           cancelToken: new axios.CancelToken((c) => (cancel = c)),
         })
         .then((res) => {
@@ -73,12 +73,12 @@ const Home = () => {
         });
     }
     return () => cancel && cancel();
-  }, [query, pageNumber]);
+  }, [query, pageNumber, setLoading, setHasMore, fetchBeersByName]);
 
   useEffect(() => {
     //set Beers state to [] from every search
     resetBeersState();
-  }, [query]);
+  }, [query, resetBeersState]);
 
   return (
     <Container>
