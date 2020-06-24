@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bf3f9f3352cb576bf6ef08b407ccdaae",
+    "revision": "da7c7b653638d032f08c944b1c785e50",
     "url": "/punk-beer/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/punk-beer/static/css/2.3cb76441.chunk.css"
   },
   {
-    "revision": "2888da442f3a990423da",
+    "revision": "906b4ed2b007b29ff601",
     "url": "/punk-beer/static/css/main.0bf977bb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/punk-beer/static/js/2.6a25aac1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2888da442f3a990423da",
-    "url": "/punk-beer/static/js/main.c261ca55.chunk.js"
+    "revision": "906b4ed2b007b29ff601",
+    "url": "/punk-beer/static/js/main.6ca8e46f.chunk.js"
   },
   {
     "revision": "45bd1fd60fa726e34b7c",
