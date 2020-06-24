@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/punk-beer/precache-manifest.0ec4ac90578265c1bd5ef2990e7b19b8.js"
+  "/punk-beer/precache-manifest.b3fe4da964f8b4950e8f9951ee40b8d6.js"
 );
 
 self.addEventListener('message', (event) => {
