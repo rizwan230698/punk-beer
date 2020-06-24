@@ -35,7 +35,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 10px;
 `;
