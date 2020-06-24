@@ -12,7 +12,7 @@ import {
 import { shortDescription } from '../../utils';
 import { BeerContext } from '../../context/beerProvider';
 
-const BeerCard = ({ beer }) => {
+const BeerCard = React.forwardRef(({ beer }, ref) => {
   const { id, name, description, image_url } = beer;
   const {
     state: { favourites },
@@ -22,7 +22,7 @@ const BeerCard = ({ beer }) => {
 
   return (
     <CardX hoverable>
-      <ImageContainer>
+      <ImageContainer ref={ref}>
         <Image src={image_url} alt={name} />
       </ImageContainer>
       <Content>
@@ -36,6 +36,6 @@ const BeerCard = ({ beer }) => {
       )}
     </CardX>
   );
-};
+});
 
 export default BeerCard;

@@ -9,7 +9,7 @@ const beerReducer = (state, action) => {
     case 'FETCH_BEERS':
       return {
         ...state,
-        beers: action.payload,
+        beers: [...state.beers, ...action.payload],
       };
     case 'ADD_TO_FAVOURITE':
       return {
@@ -42,16 +42,22 @@ export const BeerProvider = ({ children }) => {
     favouriteBeers: [],
   });
   const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
 
-  const fetchBeers = async (page = 1) => {
+  const fetchBeers = async (pageNumber = 1) => {
     setLoading(true);
-    const response = await beersApi.get(`/beers?page=${page}&per_page=20`);
+    const response = await beersApi.get(
+      `/beers?page=${pageNumber}&per_page=20`
+    );
+    //set hasMore to true if current response array is not empty
+    setHasMore(response.data.length > 0);
     dispatch({ type: 'FETCH_BEERS', payload: response.data });
     setLoading(false);
   };
 
   const fetchBeersByName = (data) => {
     dispatch({ type: 'FETCH_BEERS', payload: data });
+    setLoading(false);
   };
 
   const addToFavourite = (beer) => {
@@ -69,6 +75,9 @@ export const BeerProvider = ({ children }) => {
       value={{
         state,
         loading,
+        hasMore,
+        setHasMore,
+        setLoading,
         fetchBeers,
         addToFavourite,
         removeFromFavourite,

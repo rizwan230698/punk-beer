@@ -21,6 +21,7 @@ export const CardX = styled(Card)`
 
 export const ImageContainer = styled.div`
   flex: 0 0 35%;
+  padding-right: 24px;
 `;
 
 export const Image = styled.img`
