@@ -8,11 +8,11 @@ import Layout from './components/layout';
 
 const App = () => (
   <BeerProvider>
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
       <Layout>
         <Switch>
-          <Route exact path="/punk-beer/" component={Home} />
-          <Route exact path="/punk-beer/favourite" component={Favourite} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/favourite" component={Favourite} />
         </Switch>
       </Layout>
     </Router>
