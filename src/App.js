@@ -11,8 +11,8 @@ const App = () => (
     <Router>
       <Layout>
         <Switch>
-          <Route exact path="punk-beer/" component={Home} />
-          <Route exact path="punk-beer/favourite" component={Favourite} />
+          <Route exact path="/punk-beer/" component={Home} />
+          <Route exact path="/punk-beer/favourite" component={Favourite} />
         </Switch>
       </Layout>
     </Router>
