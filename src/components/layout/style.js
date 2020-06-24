@@ -11,7 +11,7 @@ export const HeaderX = styled(Header)`
   align-items: center;
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled(Link)`
   margin-right: auto;
   margin-bottom: 0;
   color: #fff;
