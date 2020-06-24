@@ -11,6 +11,16 @@ export const Container = styled.div`
 
 export const InputX = styled(Input)`
   flex: 0 0 60%;
+  
+  &:focus,&:hover{
+    border-color: #00d1b2;
+  }
+  &:focus{
+    box-shadow: 0 0 0 2px rgba(0, 209, 178,.2);
+  }
+  
+  
+  }
 
   ${media.desktop`
   flex : 0 0 70%
