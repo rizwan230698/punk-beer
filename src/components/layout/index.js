@@ -6,7 +6,7 @@ import { HeaderX, Logo, OptionLink, ContentX, FooterX } from './style';
 const LayoutComponent = ({ children }) => (
   <Layout>
     <HeaderX>
-      <Logo>Beans Love Beers</Logo>
+      <Logo to="/">Beans Love Beers</Logo>
       <OptionLink to="/">Home</OptionLink>
       <OptionLink to="/favourite">Favourite</OptionLink>
     </HeaderX>
