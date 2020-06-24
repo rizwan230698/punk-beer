@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 
+import media from '../media';
+
 const { Header, Content, Footer } = Layout;
 
 export const HeaderX = styled(Header)`
@@ -9,6 +11,14 @@ export const HeaderX = styled(Header)`
   padding: 10px 50px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1100px) {
+    padding: 10px 30px;
+  }
+
+  ${media.mobile`
+  padding: 10px 24px;
+  `}
 `;
 
 export const Logo = styled(Link)`
@@ -17,17 +27,33 @@ export const Logo = styled(Link)`
   color: #fff;
   font-size: 28px;
   font-weight: 300;
+
+  ${media.mobile`
+  font-size: 20px;
+  font-weight: 500;
+  `}
 `;
 
 export const OptionLink = styled(Link)`
   padding: 0 10px;
+
+  ${media.mobile`
+  padding: 0 5px;
+  `}
 `;
 
 export const ContentX = styled(Content)`
   background-color: #fff;
-  padding: 0 50px;
   min-height: calc(100vh - 139px);
   padding: 24px 50px;
+
+  @media (max-width: 1100px) {
+    padding: 24px 30px;
+  }
+
+  ${media.mobile`
+  padding: 24px;
+  `}
 `;
 
 export const FooterX = styled(Footer)`
