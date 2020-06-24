@@ -98,7 +98,7 @@ const Home = () => {
       ) : (
         <Spinner size="large" />
       )}
-      {loading && state.beers.length !== 0 && <Spinner size="large" />}
+      {loading && state.beers.length !== 0 && <Spinner size="large" pt={15} />}
     </Container>
   );
 };
