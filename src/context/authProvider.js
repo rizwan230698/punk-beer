@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
   const setUser = useCallback((user) => {
     localStorage.setItem('user', JSON.stringify(user));
     setCurrentUser(user);
-    message.info(`Welcome ${user.displayName}`);
   }, []);
 
   const removeUser = () => {
