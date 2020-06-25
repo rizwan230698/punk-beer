@@ -11,6 +11,7 @@ export const HeaderX = styled(Header)`
   padding: 10px 50px;
   display: flex;
   align-items: center;
+  color: white;
 
   @media (max-width: 1100px) {
     padding: 10px 30px;
@@ -29,16 +30,18 @@ export const Logo = styled(Link)`
   font-weight: 300;
 
   ${media.mobile`
-  font-size: 20px;
+  font-size: 18px;
+  font-family: 'Dancing Script', cursive;
   font-weight: 500;
   `}
 `;
 
 export const OptionLink = styled(Link)`
   padding: 0 10px;
+  cursor: pointer;
 
   ${media.mobile`
-  padding: 0 5px;
+  padding: 0 4px;
   `}
 `;
 

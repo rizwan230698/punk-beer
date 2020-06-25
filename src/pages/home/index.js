@@ -9,11 +9,14 @@ import { Row, Col } from 'antd';
 import axios from 'axios';
 
 import { BeerContext } from '../../context/beerProvider';
+import { AuthContext } from '../../context/authProvider';
 import Spinner from '../../components/spinner';
 import BeerCard from '../../components/beerCard';
 import SearchBar from '../../components/searchBar';
 import beerApi from '../../api/beer';
 import { Container } from './style';
+import { auth } from '../../firebase';
+import AuthModal from '../../components/authModal';
 
 const Home = () => {
   const [query, setQuery] = useState('');
@@ -28,6 +31,7 @@ const Home = () => {
     fetchBeersByName,
     resetBeersState,
   } = useContext(BeerContext);
+  const { setUser } = useContext(AuthContext);
 
   const observer = useRef();
   const lastBeerCardRef = useCallback(
@@ -80,6 +84,10 @@ const Home = () => {
     resetBeersState();
   }, [query, resetBeersState]);
 
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => setUser(user));
+  }, [setUser]);
+
   return (
     <Container>
       <SearchBar handleInputChange={handleInputChange} value={query} />
@@ -99,6 +107,7 @@ const Home = () => {
         <Spinner size="large" />
       )}
       {loading && state.beers.length !== 0 && <Spinner size="large" pt={15} />}
+      <AuthModal />
     </Container>
   );
 };
