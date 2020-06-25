@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/punk-beer/static/css/main.8fe29773.chunk.css",
-    "main.js": "/punk-beer/static/js/main.d1195ca9.chunk.js",
-    "main.js.map": "/punk-beer/static/js/main.d1195ca9.chunk.js.map",
+    "main.js": "/punk-beer/static/js/main.d14d2f30.chunk.js",
+    "main.js.map": "/punk-beer/static/js/main.d14d2f30.chunk.js.map",
     "runtime-main.js": "/punk-beer/static/js/runtime-main.583a8c8a.js",
     "runtime-main.js.map": "/punk-beer/static/js/runtime-main.583a8c8a.js.map",
     "static/css/2.3cb76441.chunk.css": "/punk-beer/static/css/2.3cb76441.chunk.css",
     "static/js/2.1a3a083f.chunk.js": "/punk-beer/static/js/2.1a3a083f.chunk.js",
     "static/js/2.1a3a083f.chunk.js.map": "/punk-beer/static/js/2.1a3a083f.chunk.js.map",
     "index.html": "/punk-beer/index.html",
-    "precache-manifest.03440340b46a461683263a0b32df8073.js": "/punk-beer/precache-manifest.03440340b46a461683263a0b32df8073.js",
+    "precache-manifest.f4362bc78e1e57e4bc59d57c2088291f.js": "/punk-beer/precache-manifest.f4362bc78e1e57e4bc59d57c2088291f.js",
     "service-worker.js": "/punk-beer/service-worker.js",
     "static/css/2.3cb76441.chunk.css.map": "/punk-beer/static/css/2.3cb76441.chunk.css.map",
     "static/css/main.8fe29773.chunk.css.map": "/punk-beer/static/css/main.8fe29773.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.3cb76441.chunk.css",
     "static/js/2.1a3a083f.chunk.js",
     "static/css/main.8fe29773.chunk.css",
-    "static/js/main.d1195ca9.chunk.js"
+    "static/js/main.d14d2f30.chunk.js"
   ]
 }
