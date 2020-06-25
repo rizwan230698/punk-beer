@@ -1,18 +1,26 @@
 import React, { useContext } from 'react';
 import { Layout } from 'antd';
+import { withRouter } from 'react-router-dom';
 
 import { AuthContext } from '../../context/authProvider';
 import { HeaderX, Logo, OptionLink, ContentX, FooterX } from './style';
 
-const LayoutComponent = ({ children }) => {
+const LayoutComponent = ({ children, history }) => {
   const { currentUser, removeUser } = useContext(AuthContext);
+
+  const handleClick = () => {
+    history.push('/favourite');
+    window.scrollTo(0, 0);
+  };
 
   return (
     <Layout>
       <HeaderX>
         <Logo to="/">Beans Love Beers</Logo>
         <OptionLink to="/">Home</OptionLink>
-        <OptionLink to="/favourite">Favourite</OptionLink>
+        <OptionLink as="div" onClick={handleClick}>
+          Favourite
+        </OptionLink>
         {currentUser && (
           <OptionLink as="div" onClick={removeUser}>
             Logout
@@ -27,4 +35,4 @@ const LayoutComponent = ({ children }) => {
   );
 };
 
-export default LayoutComponent;
+export default withRouter(LayoutComponent);
