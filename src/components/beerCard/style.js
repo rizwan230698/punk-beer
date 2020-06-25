@@ -76,6 +76,7 @@ export const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  user-select: none;
 `;
 
 export const Title = styled.h3`
