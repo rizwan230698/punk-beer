@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Modal } from 'antd';
+import { Modal, message } from 'antd';
 
 import logo from '../../asests/logo.jpg';
 import { signInWithGoogle } from '../../firebase';
@@ -8,8 +8,16 @@ import { Container, InnerContainer, Title, Logo, GoogleButton } from './style';
 
 const AuthModal = () => {
   const { currentUser } = useContext(AuthContext);
+
+  const handleClose = () => message.info(`Welcome ${currentUser.displayName}`);
+
   return (
-    <Modal visible={!currentUser} closable={false} footer={null}>
+    <Modal
+      visible={!currentUser}
+      closable={false}
+      footer={null}
+      afterClose={handleClose}
+    >
       <Container>
         <InnerContainer>
           <Logo src={logo} />
