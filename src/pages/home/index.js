@@ -64,7 +64,7 @@ const Home = () => {
       var cancel;
       setLoading(true);
       beerApi
-        .get(`/beers?page=${pageNumber}&per_page=15&beer_name=${query}`, {
+        .get(`/beers?page=${pageNumber}&per_page=10&beer_name=${query}`, {
           cancelToken: new axios.CancelToken((c) => (cancel = c)),
         })
         .then((res) => {
