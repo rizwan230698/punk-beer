@@ -12,10 +12,16 @@ export const HeaderX = styled(Header)`
   display: flex;
   align-items: center;
   color: white;
+  z-index: 10;
 
   @media (max-width: 1100px) {
     padding: 10px 30px;
   }
+
+  ${media.tablet`
+  position: sticky;
+  top: 0;
+  `}
 
   ${media.mobile`
   padding: 10px 24px;
@@ -49,6 +55,7 @@ export const ContentX = styled(Content)`
   background-color: #fff;
   min-height: calc(100vh - 139px);
   padding: 24px 50px;
+  z-index: 1;
 
   @media (max-width: 1100px) {
     padding: 24px 30px;
