@@ -30,7 +30,7 @@ export const Logo = styled(Link)`
   font-weight: 300;
 
   ${media.mobile`
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Dancing Script', cursive;
   font-weight: 500;
   `}

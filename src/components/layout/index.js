@@ -15,7 +15,7 @@ const LayoutComponent = ({ children }) => {
         <OptionLink to="/favourite">Favourite</OptionLink>
         {currentUser && (
           <OptionLink as="div" onClick={removeUser}>
-            Signout
+            Logout
           </OptionLink>
         )}
       </HeaderX>
