@@ -69,4 +69,12 @@ export const ContentX = styled(Content)`
 
 export const FooterX = styled(Footer)`
   background-color: #fff;
+
+  @media (max-width: 1100px) {
+    padding: 24px 30px;
+  }
+
+  ${media.mobile`
+  padding: 24px;
+  `}
 `;
